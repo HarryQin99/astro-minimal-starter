@@ -1,22 +1,65 @@
 ---
 import Layout from "../layouts/Base.astro";
 import Container from "../components/Container.astro";
+import BlogPostPreview from '../components/BlogPostPreview.astro';
 
 const seo = {
   title: "Yongfeng Harry Qin",
-  description: "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support."
-  }
+  description: "This is a starter repo for a blog built with Astro including open graph tags, canonical urls, RSS, sitemap support."
+};
+
+
+  const page = await Astro.glob('./blog/*.md').then(posts =>
+	posts
+		.map(({ frontmatter, url }) => ({
+      url: url,
+			title: frontmatter.title,
+			description: frontmatter.description,
+			publishDate: frontmatter.publishDate,
+			image: frontmatter.image,
+		}))
+		// .sort((a, b) => {
+		// 	new Date(b.publishDate) - new Date(a.publishDate)
+		// })
+  );
+
 ---
 
-<Layout
-  seo={seo}
->
+<Layout seo={seo}>
   <Container>
     <h1>Yongfeng Harry Qin</h1>
     <p>
-      I am a software engineer based in Melbourne.
+    I'm a passionate software engineer with a strong focus on learning and problem-solving, equally valuing technical and business aspects. With my past 3 years software engineer experience, I've honed my coding skills, improved communication, and skills that work with people in different time zones. I've worked closely with business teams to address user issues and made vital technical decisions in a fast-paced environment. I have a particular enthusiasm for technologies like databases and event processing platform like Kafka.
     </p>
-
-    <a href="/blog">Blog →</a>
+    <!-- <a href="/blog">Blog →</a> -->
+  </Container>
+  <Container>
+    <article>
+      <h1>Blog</h1>
+      <section class="postlist">
+        {page.map((post) => <BlogPostPreview post={post} />)}
+      </section>
+    </article>
   </Container>
 </Layout>
+
+<style>
+  /* Posts list */
+  .postlist {
+    /* padding: 1rem 0; */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+    list-style: none;
+  }
+    
+  @media screen and (max-width: 769px) {
+    .postlist {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .blog-page-content__article {
+    /* padding: 1rem; */
+  }
+</style>
