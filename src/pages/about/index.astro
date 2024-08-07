@@ -1,0 +1,196 @@
+---
+import Layout from '../../layouts/Base.astro'
+import Container from '../../components/Container.astro';
+
+  
+const seo = {
+  title: 'About me',
+  description: 'This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.'
+}
+
+---
+
+<!-- HTML Modules -->
+
+<Layout seo={seo}>
+  <Container style={{ padding: '1rem' }}>
+    <a href="/">Home</a>
+  <Container style={{ padding: '1rem' }}>
+      <div class="name">Yongfeng(Harry) Qin</div>
+      <div class=columnContainer>
+        <div class="contact"> <a href="mailto:harryqinyf@outlook.com">harryqinyf@outlook.com</a></div>
+        <div class="contact">Linkedin <a href="https://www.linkedin.com/in/yongfeng-harry-qin/">Yongfeng Qin</a></div>
+        <div class="contact">Github <a href="https://github.com/HarryQin99">HarryQin99</a></div>
+        <div class="contact">Wesite <a href="https://astro-minimal-starter.pages.dev/">Link</a></div>
+      </div>
+  </Container>
+
+  <Container style={{ padding: '1rem',  }}>
+        <div class="section">
+            <div class="sectionTitle">PERSONAL SUMMARY</h2>
+            <hr>
+            <div class="sectionContent">
+              I'm a passionate software engineer with a strong focus on learning and problem-solving, equally valuing technical and
+              business aspects. With my past 3 years software engineer experience, I've honed my coding skills, improved
+              communication, and skills that work with people in different time zones. I've worked closely with business teams to
+              address user issues and made vital technical decisions in a fast-paced environment. I have a particular enthusiasm for
+              technologies like databases and event processing platform like Kafka
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="sectionTitle">SKILLS</h2>
+            <hr>
+
+            <div class="sectionContent">
+        <div class="section">
+            <div><strong>Programming Languages:</strong> Golang, Java, Ruby, SQL, Typescript</div>
+            <div><strong>DB, Cache Middleware:</strong> Mysql, PostgreSQL, Redis, Kafka</div>
+            <div><strong>Framework:</strong> Sprintboot, Golang web, GRPC</div>
+            <div><strong>Cloud:</strong> GCP, Azure, Terraform</div>
+            <div><strong>Others:</strong> RestFul, Docker, K8S, Datadog, Kibana, ArgoCD, Protobuf, CI/CD</div>
+            <div><strong>Keyword:</strong> Database System, Algorithm & Data Structure, Object-oriented programming, Microservice, JWT, Event-driven
+architecture, Concurrency</div>
+
+        </div>
+              </div>
+
+        <div class="section">
+            <div class="sectionTitle">EDUCATION</div>
+            <hr>
+            <div class="sectionContent">
+
+            <div class="titleDate">
+              <div><strong>University of Melbourne</strong></div>
+              <div>Melbourne, VIC</div>
+            </div>
+
+            <div class="titleDate">
+              <div><i>Bachelor of Science, Marjor of Computer and Software Engineering</i></div>
+              <div><i>March 2019 - June 2022</i></div>
+            </div>
+            <div class="customerList">
+                  <li>Distinction</li>
+                  <li>H1 for most computer sceience related subjects</li>
+            </div>
+        </div>
+
+
+        <div class="section">
+            <div class="sectionTitle">WORK EXPERIENCE</h2>
+            <hr>
+            <div class="sectionContent">
+              <div class="titleDate">
+                <div><i><strong>Bukalapak,</strong> Software Engineer</i></div>
+                <div><i>Australia (Melbourne) June 2022 - Present</i></div>
+              </div>
+
+              <div class="customerList">
+                  <li>Keywords: <strong>Golang, Ruby, Grpc, JWT, Docker, Kubernetes, Payment, Idempotency check</strong></li>
+                  <li>Collaborated with engineers to design systems and enhance backend performance using asynchronous job, cron job in Buka Internation team
+                  <li>Elevated service reliability by decoupling from legacy monolithic systems and spearheaded integration with an internal money-in, money-out ledger system, improve risk control and reliability</li>
+                  <li>Utilized service metric and datadog to build real-time service performance analytical capability</li>
+                  <li>Balanced my role as an engineer between backend service development and infrastructure management, including tasks such as provisioning resources like databases, and service migration from Azure to GCP by Iaf practice</li>
+              </div>
+
+              <div class="titleDate">
+                <div><i><strong>Bytedance,</strong> Software Engineer Intern</i></div>
+                <div><i>June 2021 - September 2022</i></div>
+              </div>
+
+              <div class="customerList">
+                  <li>Keywords: <strong>Java, Sprintboot, State machine</strong></li>
+                  <li>Created a remediation application service to manage all kafka connectors efficiently</li>
+                  <li>Developed over 5 new RESTful and RPC API in the core messaging production using gRPC framework for connectors</li>
+                  <li>Reduce over 50% of time and work to maintain kafka connectors and report abnormal error automatically</li>
+              </div>
+
+
+              <div class="titleDate">
+                <div><i><strong>eBay,</strong> Software Engineer Intern</i></div>
+                <div><i>Octorber 2021 - Feb 2022</i></div>
+              </div>
+
+              <div class="customerList">
+                  <li>Keywords: <strong>Java, Kafka, Kafka connector, Grpc, Messaging Middleware</strong></li>
+                  <li>Refactored the back-End logic using state-machine, and make the transferring of Compiling to Deploying automatically</li>
+                  <li>Finally, increase the stability and scalability of the Back-end implementation. The amount of users increases from 300 to 600+ inner Bytedance</li>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="section">
+            <div class="sectionTitle">PROJECTS</h2>
+            <hr>
+            <div class="sectionContent">
+              <div class="titleDate">
+                <div><i>Currency Tracker | Golang, STMP Emial Sender, Kafka, Cronjob</i></div>
+                <div><i>Octorber 2021 - Feb 2022</i></div>
+              </div>
+
+              <div class="customerList">
+                  <li>This product automatically retrieves exchange rates from a bank's API timely. Users can set thresholds for desired exchange rates. When the exchange rate surpasses these thresholds, the product sends email notifications to specified addresses </li>
+                  <li>Utilize Cron job which to fetches currency data from bank every minute and the Kafka to separate the logic of fetching data and send notifications to make the service neat and easier to debug</li>
+              </div>
+            </div>
+        </div>
+  </Container>
+  <!-- <Container style={{ padding: '1rem' }}>
+  </Container> -->
+</Layout>
+
+<!-- CSS Modules -->
+
+<style>
+  .name {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+.customerList {
+    font-size: 14px;
+            list-style-type: square; 
+            padding-left: 20px; 
+            margin-top: 3px;
+            margin-bottom: 10px;
+        }
+
+  .customerList li {
+    margin-bottom: 3px;
+  }
+
+  .contact {
+    display: inline;
+    margin: 10px;
+  }
+
+  .columnContainer {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  .sectionContent {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+        .titleDate {
+            display: flex;
+            justify-content: space-between;
+        }
+
+       hr {
+            border: 0;
+            border-top: 1px solid #000; /* Adjust thickness and color */
+        }
+    
+</style>
